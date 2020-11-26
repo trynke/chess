@@ -5,27 +5,27 @@ def print_chess_board(k, l, m, n):
         if i % 2 == 0:
             for j in range(0, 8):
                 if j % 2 == 0:
-                    board[i][j] = "\033[0;37;48m  "
-                else:
                     board[i][j] = "\033[0;37;47m  "
+                else:
+                    board[i][j] = "\033[0;37;48m  "
         else:
             for j in range(0, 8):
                 if j % 2 == 0:
-                    board[i][j] = "\033[0;37;47m  "
-                else:
                     board[i][j] = "\033[0;37;48m  "
+                else:
+                    board[i][j] = "\033[0;37;47m  "
     
     k, l, m, n = map(lambda x: x - 1, (k, l, m, n))
 
     if (k + l) % 2 != 0:
-        board[7-l][k] = "\033[1;31;40m 1"
-    else:
         board[7-l][k] = "\033[0;31;47m 1"
+    else:
+        board[7-l][k] = "\033[1;31;40m 1"
 
     if (m + n) % 2 != 0:
-        board[7-n][m] = "\033[1;31;40m 2"
-    else:
         board[7-n][m] = "\033[0;31;47m 2"
+    else:
+        board[7-n][m] = "\033[1;31;40m 2"
 
     for i in range(0, 8):
         for j in range(0, 8):
