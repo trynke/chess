@@ -18,23 +18,26 @@ def print_chess_board(k, l, m, n):
     k, l, m, n = map(lambda x: x - 1, (k, l, m, n))
 
     if (k + l) % 2 != 0:
-        board[7-l][k] = "\033[0;31;47m 1"
+        board[7-l][k] = "\033[1;31;47m 1"
     else:
         board[7-l][k] = "\033[1;31;40m 1"
 
     if (m + n) % 2 != 0:
-        board[7-n][m] = "\033[0;31;47m 2"
+        board[7-n][m] = "\033[1;31;47m 2"
     else:
         board[7-n][m] = "\033[1;31;40m 2"
 
     for i in range(0, 8):
         for j in range(0, 8):
             print(board[i][j], end='')
-        print()
+        print('\033[0;37;40m')
     
 
-def compare_colors():
-    pass
+def compare_colors(k, l, m, n):
+    if (k+l) % 2 == (m+n) % 2:
+        print('a) Squares (k, l) and (m, n) have the same colour')
+    else:
+        print('a) Squares (k, l) and (m, n) have different colours')
 
 
 def check_queen():
@@ -64,9 +67,17 @@ def main():
     l = input("Enter value l: ")
     m = input("Enter value m: ")
     n = input("Enter value n: ")
+
     if k in numbers and l in numbers and m in numbers and n in numbers:
-        k, l, m, n = map(int, (k, l, m, n))
-        print_chess_board(k, l, m, n)
+        if k == m and l == n:
+            print("This is the same square! Try again \n")
+            main()
+        else:
+            k, l, m, n = map(int, (k, l, m, n))
+            print_chess_board(k, l, m, n)
+            print('\033[0;37;40m')
+            compare_colors(k, l, m, n)
+
     else:
         print("Some of the values are incorrect! Let's try again \n")
         main()
