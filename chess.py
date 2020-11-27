@@ -62,7 +62,7 @@ def check_bishop_move():
 
 def main():
     numbers = [str(i) for i in range(1, 9)]
-    print("Hello. You need to enter indexes k, l, m, n for 2 chess squares. Be careful: numbers must be between 1 to 8 inclusively.")
+    print("Hello. You need to enter indexes (k, l) and (m, n) for 2 chess squares. Be careful: numbers must be between 1 to 8 inclusively.")
     k = input("Enter value k: ")
     l = input("Enter value l: ")
     m = input("Enter value m: ")
