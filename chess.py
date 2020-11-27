@@ -43,13 +43,17 @@ def compare_colors(k, l, m, n):
 def check_queen(k, l, m, n):
     print('b) Queen is located on the square (k, l). Does it threaten square (m, n)?')
     if (k == m) or (l == n) or abs(k - m) == abs(l - n):
-        print("  Yes, it does")
+        print("   Yes, it does")
     else:
-        print("  No, it doesn't")
+        print("   No, it doesn't")
 
 
-def check_knight():
-    pass
+def check_knight(k, l, m, n):
+    print('c) Knight is located on the square (k, l). Does it threaten square (m, n)?')
+    if ((abs(abs(k - m) - 2) == 0) and (abs(abs(l - n) - 1) == 0) or (abs(abs(k - m) - 1) == 0) and (abs(abs(l - n) - 2) == 0)):
+        print('   Yes, it does')
+    else:
+        print("   No, it doesn't")
 
 
 def check_rook_move():
@@ -82,6 +86,7 @@ def main():
             print('\033[0;37;40m')
             compare_colors(k, l, m, n)
             check_queen(k, l, m, n)
+            check_knight(k, l, m, n)
 
     else:
         print("Some of the values are incorrect! Let's try again \n")
