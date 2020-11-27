@@ -40,8 +40,12 @@ def compare_colors(k, l, m, n):
         print('a) Squares (k, l) and (m, n) have different colours')
 
 
-def check_queen():
-    pass
+def check_queen(k, l, m, n):
+    print('b) Queen is located on the square (k, l). Does it threaten square (m, n)?')
+    if (k == m) or (l == n) or abs(k - m) == abs(l - n):
+        print("  Yes, it does")
+    else:
+        print("  No, it doesn't")
 
 
 def check_knight():
@@ -77,6 +81,7 @@ def main():
             print_chess_board(k, l, m, n)
             print('\033[0;37;40m')
             compare_colors(k, l, m, n)
+            check_queen(k, l, m, n)
 
     else:
         print("Some of the values are incorrect! Let's try again \n")
