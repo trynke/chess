@@ -74,13 +74,25 @@ def check_queen_move(k, l, m, n):
         if x > 8 or x < 1 or y > 8 or y < 1:
             x = (m + n + k - l) // 2
             y = (m + n - k + l) // 2
-        print('   No, first you need to move to the square ({x}, {y})')
+        print(f'   No, first you need to move to the square ({x}, {y})')
     else:
         print(f"   No, first you need to move to the square ({k}, {n})")     
 
 
-def check_bishop_move():
-    pass
+def check_bishop_move(k, l, m, n):
+    print("f) Is it possible to reach square (m, n) from square (k, l) with one move of the queen?")
+    if (k + l) % 2 == (m + n) % 2:
+        if abs(k - m) == abs(l - n):
+            print("   Yes, it's possible")
+        else:
+            x = (k + l + m - n) // 2
+            y = (k + l - m + n) // 2
+            if x > 8 or x < 1 or y > 8 or y < 1:
+                x = (m + n + k - l) // 2
+                y = (m + n - k + l) // 2
+            print(f'   No, first you need to move to the square ({x}, {y})')
+    else:
+        print("   No, the squares have different colours")
 
 
 def main():
@@ -97,6 +109,7 @@ def main():
             main()
         else:
             k, l, m, n = map(int, (k, l, m, n))
+            print()
             print_chess_board(k, l, m, n)
             print('\033[0;37;40m')
             compare_colors(k, l, m, n)
@@ -104,6 +117,7 @@ def main():
             check_knight(k, l, m, n)
             check_rook_move(k, l, m, n)
             check_queen_move(k, l, m, n)
+            check_bishop_move(k, l, m, n)
 
     else:
         print("Some of the values are incorrect! Let's try again \n")
