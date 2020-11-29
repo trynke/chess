@@ -3,7 +3,7 @@
 ## :mortar_board: About 
 This is one more of my university assignments. The task was to write a program that could implement the algorithm for solving several chess problems. Here it is!
 
-Input data is indexes of 2 chess squares that you want to use: (k, l) and (m, n). Be aware: ***values have to be integers from 1 to 8 inclusively***. On the output you wil get 6 questions about chess and answer for those problems. Also this program displays a picture of a chess board with marked chosen squares (number 1 for square (k, l) and number 2 for (m, n))
+Input data is indexes of 2 chess squares that you want to use: (k, l) and (m, n). Be aware: ***values have to be integers from 1 to 8 inclusively***. On the output you wil get 6 questions about chess and answer for those problems. Also this program displays a picture of a chess board with marked chosen squares (number 1 for square (k, l) and number 2 for (m, n)).
 
 Here is a list of problems that this program solves:
 - a) Do the squares have the same color?
