@@ -56,8 +56,12 @@ def check_knight(k, l, m, n):
         print("   No, it doesn't")
 
 
-def check_rook_move():
-    pass
+def check_rook_move(k, l, m, n):
+    print("d) Is it possible to reach square (m, n) from square (k, l) with one move of the rook?")
+    if k == m or l == n:
+        print("   Yes, it's possible")
+    else:
+        print(f"   No, first you need to move to the square ({k}, {n})")
 
 
 def check_queen_move():
@@ -87,12 +91,12 @@ def main():
             compare_colors(k, l, m, n)
             check_queen(k, l, m, n)
             check_knight(k, l, m, n)
+            check_rook_move(k, l, m, n)
 
     else:
         print("Some of the values are incorrect! Let's try again \n")
         main()
     
-
 
 if __name__ == '__main__':
     main()
