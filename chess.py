@@ -80,7 +80,7 @@ def check_queen_move(k, l, m, n):
 
 
 def check_bishop_move(k, l, m, n):
-    print("f) Is it possible to reach square (m, n) from square (k, l) with one move of the queen?")
+    print("f) Is it possible to reach square (m, n) from square (k, l) with one move of the bishop?")
     if (k + l) % 2 == (m + n) % 2:
         if abs(k - m) == abs(l - n):
             print("   Yes, it's possible")
