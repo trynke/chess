@@ -64,8 +64,19 @@ def check_rook_move(k, l, m, n):
         print(f"   No, first you need to move to the square ({k}, {n})")
 
 
-def check_queen_move():
-    pass
+def check_queen_move(k, l, m, n):
+    print("e) Is it possible to reach square (m, n) from square (k, l) with one move of the queen?")
+    if (k == m) or (l == n) or abs(k - m) == abs(l - n):
+        print("   Yes, it's possible")
+    elif (k + l) % 2 == (m + n) % 2:
+        x = (k + l + m - n) // 2
+        y = (k + l - m + n) // 2
+        if x > 8 or x < 1 or y > 8 or y < 1:
+            x = (m + n + k - l) // 2
+            y = (m + n - k + l) // 2
+        print('   No, first you need to move to the square ({x}, {y})')
+    else:
+        print(f"   No, first you need to move to the square ({k}, {n})")     
 
 
 def check_bishop_move():
@@ -92,6 +103,7 @@ def main():
             check_queen(k, l, m, n)
             check_knight(k, l, m, n)
             check_rook_move(k, l, m, n)
+            check_queen_move(k, l, m, n)
 
     else:
         print("Some of the values are incorrect! Let's try again \n")
