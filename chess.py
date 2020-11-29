@@ -14,7 +14,7 @@ def print_chess_board(k, l, m, n):
                     board[i][j] = "\033[0;37;48m  "
                 else:
                     board[i][j] = "\033[0;37;47m  "
-    
+
     k, l, m, n = map(lambda x: x - 1, (k, l, m, n))
 
     if (k + l) % 2 != 0:
@@ -31,7 +31,7 @@ def print_chess_board(k, l, m, n):
         for j in range(0, 8):
             print(board[i][j], end='')
         print('\033[0;37;40m')
-    
+
 
 def compare_colors(k, l, m, n):
     if (k+l) % 2 == (m+n) % 2:
@@ -76,7 +76,7 @@ def check_queen_move(k, l, m, n):
             y = (m + n - k + l) // 2
         print(f'   No, first you need to move to the square ({x}, {y})')
     else:
-        print(f"   No, first you need to move to the square ({k}, {n})")     
+        print(f"   No, first you need to move to the square ({k}, {n})")
 
 
 def check_bishop_move(k, l, m, n):
@@ -122,7 +122,7 @@ def main():
     else:
         print("Some of the values are incorrect! Let's try again \n")
         main()
-    
+
 
 if __name__ == '__main__':
     main()
